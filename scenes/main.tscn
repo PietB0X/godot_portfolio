@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bkw63lfxsc1v1" path="res://ui/interaction_indicator.tscn" id="14_jbj1t"]
 [ext_resource type="PackedScene" path="res://objects/skill_block.tscn" id="14_skill_block"]
 [ext_resource type="PackedScene" uid="uid://djautnry5mwls" path="res://objects/project_board.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" path="res://ui/portfolio_overview.tscn" id="16_portfolio_overview"]
 [ext_resource type="FontFile" uid="uid://n7netfj3hil8" path="res://fonts/Nunito-Regular.ttf" id="17_nunito"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_38ys3"]
@@ -138,6 +139,8 @@ offset_left = -250.0
 offset_top = -120.0
 offset_right = 250.0
 offset_bottom = -40.0
+
+[node name="PortfolioOverview" parent="HUD" instance=ExtResource("16_portfolio_overview")]
 
 [node name="platform" parent="." instance=ExtResource("14_a8y0u")]
 transform = Transform3D(0.9624126, -0.27054986, -0.023765223, 0, 0.087503515, -0.9961642, 0.27159163, 0.958721, 0.084214486, 1.2859049, 1.7071977, -1.2307503)

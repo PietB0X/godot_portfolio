@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://portfolio_overview_001"]
+
+[ext_resource type="Script" path="res://ui/portfolio_overview.gd" id="1_portfolio_overview"]
+
+[node name="PortfolioOverview" type="Control"]
+anchors_preset = 2
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -360.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 420.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_portfolio_overview")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="Panel/Margin/VBox"]
+text = "Portfolio"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 22
+
+[node name="Stats" type="Label" parent="Panel/Margin/VBox"]
+text = "Fortschritt: 0 / 0 freigeschaltet"
+theme_override_font_sizes/font_size = 13
+modulate = Color(1, 1, 1, 0.7)
+
+[node name="List" type="VBoxContainer" parent="Panel/Margin/VBox"]
+size_flags_vertical = 3
+theme_override_constants/separation = 4
