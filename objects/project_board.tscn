@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://djautnry5mwls"]
+
+[ext_resource type="Script" uid="uid://cyfoacotvrr2a" path="res://objects/project_board.gd" id="1_project_board"]
+[ext_resource type="PackedScene" uid="uid://do8sg1k5xvj2h" path="res://models/platform.glb" id="2_platform_mesh"]
+[ext_resource type="FontFile" path="res://fonts/Nunito-Regular.ttf" id="3_nunito"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_interaction"]
+size = Vector3(3, 2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_collision"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_project"]
+font = ExtResource("3_nunito")
+font_size = 24
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ProjectBoard" type="StaticBody3D"]
+script = ExtResource("1_project_board")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_collision")
+
+[node name="platform" parent="." instance=ExtResource("2_platform_mesh")]
+
+[node name="InteractionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("BoxShape3D_interaction")
+
+[node name="Display" type="Node3D" parent="."]
+transform = Transform3D(-0.99936, -1.5636245e-09, -0.03577164, -0.0048572435, -0.9907383, 0.1356979, -0.035440337, 0.1357848, 0.9901043, 0.01075843, 0.8050129, 0)
+
+[node name="IconSprite" type="Sprite3D" parent="Display"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.15, 0)
+pixel_size = 0.001
+
+[node name="TitleLabel" type="Label3D" parent="Display"]
+transform = Transform3D(1, 0, -1.3969839e-09, 0, 0, -0.9999996, 0, 1, 0, 0.020385537, 0.006417215, -0.56951535)
+text = "Project Name"
+label_settings = SubResource("LabelSettings_project")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://project_popup_001"]
+
+[ext_resource type="Script" path="res://ui/project_popup.gd" id="1_project_popup"]
+
+[node name="ProjectPopup" type="Control"]
+script = ExtResource("1_project_popup")
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Project Title"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+
+[node name="SubtitleLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Subtitle"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+
+[node name="DescriptionLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Project description goes here..."
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="TechStackLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Tech Stack: React, TypeScript, Node.js"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="ScreenshotTexture" type="TextureRect" parent="Panel/VBoxContainer"]
+layout_mode = 2
+stretch_mode = 5
+expand_mode = 1
+visible = false
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GithubButton" type="Button" parent="Panel/VBoxContainer/Buttons"]
+layout_mode = 2
+text = "GitHub"
+visible = false
+
+[node name="LiveButton" type="Button" parent="Panel/VBoxContainer/Buttons"]
+layout_mode = 2
+text = "Live Demo"
+visible = false
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
