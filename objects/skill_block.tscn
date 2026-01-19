@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://skill_block_001"]
+[gd_scene load_steps=12 format=3 uid="uid://htgc1vx7267l"]
 
-[ext_resource type="Script" path="res://objects/skill_block.gd" id="1_skill_block"]
+[ext_resource type="Script" uid="uid://es1wuqsgw0fc" path="res://objects/skill_block.gd" id="1_skill_block"]
 [ext_resource type="PackedScene" uid="uid://cs417o1y08xb1" path="res://models/brick.glb" id="2_brick_mesh"]
 [ext_resource type="Material" uid="uid://booc27br2ap2l" path="res://models/colormap.tres" id="3_colormap"]
 [ext_resource type="ArrayMesh" uid="uid://bkyb0o2ipxxya" path="res://meshes/brick.res" id="4_particles_mesh"]
@@ -58,6 +58,9 @@ shape = SubResource("BoxShape3D_block")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BottomDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_detector")
+
+[node name="PopupAnchor" type="Marker3D" parent="."]
+position = Vector3(0, 1.6, 0)
 
 [node name="Particles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25192702, 0)

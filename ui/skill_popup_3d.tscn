@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqyvcp17wshk"]
+
+[ext_resource type="Script" uid="uid://y6bqnjq483j" path="res://ui/skill_popup_3d.gd" id="1_skill_popup_3d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.08, 0.08, 0.1, 0.75)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bg"]
+size = Vector2(2.6, 1.2)
+
+[node name="SkillPopup3D" type="Node3D"]
+script = ExtResource("1_skill_popup_3d")
+
+[node name="Background" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_bg")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_bg")
+
+[node name="IconLabel" type="Label3D" parent="."]
+pixel_size = 0.01
+no_depth_test = true
+modulate = Color(1, 0.9, 0.2, 1)
+text = "?"
+font_size = 48
+
+[node name="TitleLabel" type="Label3D" parent="."]
+pixel_size = 0.01
+no_depth_test = true
+text = "Skill"
+
+[node name="ContentLabel" type="Label3D" parent="."]
+pixel_size = 0.01
+no_depth_test = true
+modulate = Color(0.92, 0.92, 0.95, 1)
+text = "Content"
+font_size = 20
